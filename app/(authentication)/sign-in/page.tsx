@@ -1,5 +1,6 @@
 "use client"
 
+import Navbar from "@/app/_components/Navbar";
 import { IAuthResponse } from "@/app/_types/IAuthResponse";
 import { IUser } from "@/app/_types/IUser";
 import { useRouter } from "next/navigation";
@@ -15,6 +16,12 @@ export default function SignIn() {
     const { name, value } = event.target;
     setUser((prevData) => ({ ...prevData, [name]: value }));
   }
+
+  const navLinks = [
+    { label: "Logga ut", href: "/" },
+    { label: "Om oss", href: "/about" },
+    { label: "Kontakt", href: "/contact" },
+  ];
 
   function onSubmit(event: FormEvent) {
     event.preventDefault();
@@ -81,23 +88,9 @@ export default function SignIn() {
   }
 
   return (
-    <div className="grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] bg-gray-900 text-gray-200">
-      <header className="w-full flex justify-between items-center py-4 px-8 sm:px-16 bg-gray-800 shadow-md">
-        <h1 className="text-2xl font-bold text-white">Dine & Flush</h1>
-        <nav className="flex gap-6">
-          <a href="#features" className="text-gray-300 hover:text-blue-400">
-            Logga in
-          </a>
-          <a href="#about" className="text-gray-300 hover:text-blue-400">
-            Om oss
-          </a>
-          <a href="#contact" className="text-gray-300 hover:text-blue-400">
-            Kontakt
-          </a>
-        </nav>
-      </header>
-
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+    <div className="min-h-screen flex flex-col bg-gray-900 text-gray-200">
+      <Navbar links={navLinks} />
+      <main className="flex-1 flex justify-center items-center p-8 pb-20 sm:p-20">
         <section className="text-center sm:text-left max-w-4xl">
           <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-100">
             Logga in
@@ -107,9 +100,6 @@ export default function SignIn() {
             onSubmit={onSubmit}
           >
             <div className="flex flex-col gap-2">
-              <label htmlFor="username" className="text-gray-300">
-                Användarnamn
-              </label>
               <input
                 type="text"
                 name="username"
@@ -122,9 +112,6 @@ export default function SignIn() {
               />
             </div>
             <div className="flex flex-col gap-2">
-              <label htmlFor="password" className="text-gray-300">
-                Lösenord
-              </label>
               <input
                 type="password"
                 name="password"
