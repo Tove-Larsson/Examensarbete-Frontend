@@ -77,7 +77,7 @@ export default function Home() {
           </section>
           <div className="flex justify-center gap-4 mt-8">
             <button onClick={handleButtonClick} className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700">
-              Kom igång
+              Upptäck
             </button>
           </div>
         </div>

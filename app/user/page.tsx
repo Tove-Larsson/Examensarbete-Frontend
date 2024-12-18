@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import Footer from "../_components/Footer";
 import Navbar from "../_components/Navbar";
+import LogoutButton from "../_components/LogOutButton";
 
 export default function User() {
 
@@ -54,7 +55,7 @@ export default function User() {
             onClick={() => handleNavigate("/restaurants/create")}
             className="px-6 py-3 bg-green-600 text-white rounded-lg shadow hover:bg-green-700"
           >
-            Skapa en restaurang
+            Lägg till en restaurang
           </button>
 
           <button
@@ -64,6 +65,7 @@ export default function User() {
             Uppdatera en restaurang
           </button>
         </section>
+        <LogoutButton />
       </main>
       <Footer />
     </div>
