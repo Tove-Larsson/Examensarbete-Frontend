@@ -81,7 +81,7 @@ export default function Restaurants() {
                   </p>
                   <p className="text-gray-400">
                     <strong>Toalett:</strong>{" "}
-                    {restaurant.toilet ? "Tillgänglig" : "Inte tillgänglig"}
+                    {restaurant.toilet}
                   </p>
                 </div>
               ))}

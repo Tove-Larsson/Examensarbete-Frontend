@@ -25,7 +25,7 @@ export default function Home() {
         <div className="text-center sm:text-left max-w-4xl">
           <section>
             <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-100">
-              Hitta restauranger med komfort
+              Hitta restauranger med komfort i Stockholm
             </h2>
             <p className="text-lg text-gray-400 mt-4">
               Upptäck restauranger nära dig och se antal toaletter, allt i en

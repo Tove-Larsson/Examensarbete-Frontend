@@ -46,6 +46,7 @@ export default function SignIn() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(user),
+      signal,
     })
       .then((response) => {
         clearTimeout(timeoutId);
@@ -135,7 +136,7 @@ export default function SignIn() {
                   : "bg-blue-600 hover:bg-blue-700"
               }`}
             >
-              {loading ? "Signing in..." : "Logga in"}
+              {loading ? "Loggar in..." : "Logga in"}
             </button>
           </form>
         </section>
