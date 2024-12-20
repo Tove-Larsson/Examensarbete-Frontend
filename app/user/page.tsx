@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Footer from "../_components/Footer";
 import Navbar from "../_components/Navbar";
 import LogoutButton from "../_components/LogOutButton";
+import DeleteAccountButton from "../_components/DeleteSelfButton";
 
 export default function User() {
 
@@ -66,6 +67,7 @@ export default function User() {
           </button>
         </section>
         <LogoutButton />
+        <DeleteAccountButton />
       </main>
       <Footer />
     </div>

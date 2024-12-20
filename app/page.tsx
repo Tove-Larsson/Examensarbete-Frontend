@@ -1,15 +1,14 @@
-"use client"
+"use client";
 
 import { useRouter } from "next/navigation";
 import Footer from "./_components/Footer";
 import Navbar from "./_components/Navbar";
 
 export default function Home() {
-
   const router = useRouter();
 
   const handleButtonClick = () => {
-    router.push('/restaurants')
+    router.push("/restaurants");
   };
 
   const navLinks = [
@@ -21,7 +20,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-900 text-gray-200">
       <Navbar links={navLinks} />
-        <main className="flex-1 flex justify-center items-center p-8 pb-20 sm:p-20">
+      <main className="flex-1 flex justify-center items-center p-8 pb-20 sm:p-20">
         <div className="text-center sm:text-left max-w-4xl">
           <section>
             <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-100">
@@ -34,9 +33,9 @@ export default function Home() {
           </section>
           <section
             id="features"
-            className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mt-16"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto mt-16"
           >
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col items-center gap-4 text-center">
               <div className="w-12 h-12 bg-blue-800 rounded-full flex justify-center items-center text-blue-400">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +54,7 @@ export default function Home() {
               </div>
               <p className="text-gray-300">Restauranger nära dig</p>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col items-center gap-4 text-center">
               <div className="w-12 h-12 bg-blue-800 rounded-full flex justify-center items-center text-blue-400">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +75,10 @@ export default function Home() {
             </div>
           </section>
           <div className="flex justify-center gap-4 mt-8">
-            <button onClick={handleButtonClick} className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700">
+            <button
+              onClick={handleButtonClick}
+              className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700"
+            >
               Upptäck
             </button>
           </div>
@@ -85,4 +87,4 @@ export default function Home() {
       <Footer />
     </div>
   );
-};
+}
