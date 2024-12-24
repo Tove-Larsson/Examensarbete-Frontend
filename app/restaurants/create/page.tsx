@@ -35,12 +35,6 @@ export default function CreateRestaurant() {
     }));
   }
 
-  const navLinks = [
-    { label: "Hem", href: "/" },
-    { label: "Om oss", href: "/about" },
-    { label: "Kontakt", href: "/contact" },
-  ];
-
   function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
 
@@ -80,7 +74,7 @@ export default function CreateRestaurant() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-900 text-gray-200">
-      <Navbar links={navLinks} />
+      <Navbar />
 
       <main className="flex-1 flex flex-col justify-center items-center p-8 sm:p-20 gap-8 text-center">
         <section>

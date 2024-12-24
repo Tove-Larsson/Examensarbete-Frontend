@@ -10,11 +10,6 @@ export default function Restaurants() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const navLinks = [
-    { label: "Logga in", href: "/sign-in" },
-    { label: "Om oss", href: "/about" },
-    { label: "Kontakt", href: "/contact" },
-  ];
 
   useEffect(() => {
     fetch("http://localhost:8080/restaurant/all", {
@@ -40,7 +35,7 @@ export default function Restaurants() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-900 text-gray-200">
-      <Navbar links={navLinks} />
+      <Navbar />
 
       <main className="flex-1 p-8 sm:p-16">
         <div className="text-center max-w-4xl mx-auto">

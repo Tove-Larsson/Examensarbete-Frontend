@@ -17,12 +17,6 @@ export default function SignIn() {
     setUser((prevData) => ({ ...prevData, [name]: value }));
   }
 
-  const navLinks = [
-    { label: "Logga ut", href: "/" },
-    { label: "Om oss", href: "/about" },
-    { label: "Kontakt", href: "/contact" },
-  ];
-
   function onSubmit(event: FormEvent) {
     event.preventDefault();
 
@@ -73,6 +67,7 @@ export default function SignIn() {
         }
         sessionStorage.setItem("jwtToken", token);
         sessionStorage.setItem("role", role);
+        sessionStorage.setItem("isLoggedIn", "true");
 
         if (role.match("USER")) router.push("/user");
 
@@ -90,7 +85,7 @@ export default function SignIn() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-900 text-gray-200">
-      <Navbar links={navLinks} />
+      <Navbar />
       <main className="flex-1 flex justify-center items-center p-8 pb-20 sm:p-20">
         <section className="text-center sm:text-left max-w-4xl">
           <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-100">

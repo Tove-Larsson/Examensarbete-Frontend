@@ -120,7 +120,7 @@ export default function UpdateRestaurant() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-900 text-gray-200">
-      <Navbar links={navLinks} />
+      <Navbar />
 
       <main className="flex-1 p-8 sm:p-16">
         <div className="text-center max-w-4xl mx-auto">

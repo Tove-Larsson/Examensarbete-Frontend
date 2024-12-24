@@ -1,5 +1,6 @@
 "use client";
 
+import Navbar from "@/app/_components/Navbar";
 import { IUser } from "@/app/_types/IUser";
 import { ChangeEvent, FormEvent, useState } from "react";
 
@@ -49,18 +50,7 @@ export default function SignUp() {
   return (
     <div className="grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] bg-gray-900 text-gray-200">
       <header className="w-full flex justify-between items-center py-4 px-8 sm:px-16 bg-gray-800 shadow-md">
-        <h1 className="text-2xl font-bold text-white">Dine & Flush</h1>
-        <nav className="flex gap-6">
-          <a href="#features" className="text-gray-300 hover:text-blue-400">
-            Logga in
-          </a>
-          <a href="#about" className="text-gray-300 hover:text-blue-400">
-            Om oss
-          </a>
-          <a href="#contact" className="text-gray-300 hover:text-blue-400">
-            Kontakt
-          </a>
-        </nav>
+        <Navbar />
       </header>
 
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
