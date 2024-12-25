@@ -26,12 +26,12 @@ const DeleteAccountButton = () => {
       .then((response) => {
         if (!response.ok) {
           return response.json().then((errData) => {
-            setError(errData.message || "Failed to delete account");
+            setError(errData.message || "Kontot kunde inte raderas");
             throw new Error(errData.message);
           });
         }
 
-        setSuccess("Your account was successfully deleted.");
+        setSuccess("Ditt konto har raderats");
 
         sessionStorage.clear()
 
@@ -40,7 +40,7 @@ const DeleteAccountButton = () => {
         }, 3000); 
       })
       .catch((err) => {
-        setError(err.message || "An error occurred while deleting your account");
+        setError(err.message || "Ett problem uppstod under raderingen av ditt konto");
       })
       .finally(() => {
         setDeleting(false);
@@ -58,7 +58,7 @@ const DeleteAccountButton = () => {
         disabled={deleting}
         className="px-6 py-3 bg-red-600 text-white rounded-md shadow-md hover:bg-red-700 transition mt-4"
       >
-        {deleting ? "Deleting..." : "Delete Account"}
+        {deleting ? "Raderar..." : "Radera konto"}
       </button>
     </div>
   );
