@@ -1,5 +1,6 @@
 "use client";
 
+import Footer from "@/app/_components/Footer";
 import Navbar from "@/app/_components/Navbar";
 import { IUser } from "@/app/_types/IUser";
 import { ChangeEvent, FormEvent, useState } from "react";
@@ -48,24 +49,18 @@ export default function SignUp() {
   }
 
   return (
-    <div className="grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] bg-gray-900 text-gray-200">
-      <header className="w-full flex justify-between items-center py-4 px-8 sm:px-16 bg-gray-800 shadow-md">
-        <Navbar />
-      </header>
-
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+    <div className="min-h-screen flex flex-col bg-gray-900 text-gray-200">
+      <Navbar />
+      <main className="flex-1 flex justify-center items-center p-8 pb-20 sm:p-20">
         <section className="text-center sm:text-left max-w-4xl">
           <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-100">
-            Registrera ditt konto
+            Skapa konto
           </h2>
           <form
             onSubmit={onSubmit}
             className="flex flex-col gap-6 mt-8 w-full max-w-md"
           >
             <div className="flex flex-col gap-2">
-              <label htmlFor="username" className="text-gray-300">
-                Användarnamn
-              </label>
               <input
                 type="text"
                 name="username"
@@ -78,9 +73,6 @@ export default function SignUp() {
             </div>
 
             <div className="flex flex-col gap-2">
-              <label htmlFor="password" className="text-gray-300">
-                Lösenord
-              </label>
               <input
                 type="password"
                 name="password"
@@ -107,18 +99,12 @@ export default function SignUp() {
                   : "bg-blue-600 hover:bg-blue-700"
               }`}
             >
-              {loading ? "Registrerar..." : "Registrera"}
+              {loading ? "Skapar..." : "Skapa"}
             </button>
           </form>
         </section>
       </main>
-
-      <footer className="w-full text-center py-4 text-gray-500 border-t border-gray-700">
-        <p>
-          &copy; {new Date().getFullYear()} Dine & Flush. Alla rättigheter
-          förbehållna.
-        </p>
-      </footer>
+      <Footer />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 "use client"
 
+import Footer from "@/app/_components/Footer";
 import Navbar from "@/app/_components/Navbar";
 import { IAuthResponse } from "@/app/_types/IAuthResponse";
 import { IUser } from "@/app/_types/IUser";
@@ -28,7 +29,7 @@ export default function SignIn() {
     setLoading(true);
     setError("");
 
-    const timeout: number = 10_000;
+    const timeout: number = 30_000;
     const controller = new AbortController();
     const signal = controller.signal;
 
@@ -136,12 +137,7 @@ export default function SignIn() {
           </form>
         </section>
       </main>
-      <footer className="w-full text-center py-4 text-gray-500 border-t border-gray-700">
-        <p>
-          &copy; {new Date().getFullYear()} Dine & Flush. Alla rättigheter
-          förbehållna.
-        </p>
-      </footer>
+      <Footer />
     </div>
   );
 }

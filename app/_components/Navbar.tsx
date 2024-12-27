@@ -16,15 +16,14 @@ const Navbar = ({}: NavbarProps) => {
 
     if (isLoggedIn) {
       setNavLinks([
-        { label: "Hem", href: "/" },
-        { label: "Profil", href: "/user" },
         { label: "Restauranger", href: "/restaurants" },
+        { label: "Hem", href: "/user" }
       ]);
     } else {
       setNavLinks([
-        { label: "Hem", href: "/" },
+        { label: "Restauranger", href: "/restaurants" },
         { label: "Logga in", href: "/sign-in" },
-        { label: "Kontakt", href: "/contact" },
+        { label: "Skapa konto", href: "/sign-up" },
       ]);
     }
   }, []);
