@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation"; 
+import { BASE_URL } from "@/variable.env";
 
 const DeleteAccountButton = () => {
   const [deleting, setDeleting] = useState(false);
@@ -17,7 +18,7 @@ const DeleteAccountButton = () => {
 
     setDeleting(true);
 
-    fetch("http://localhost:8080/user/delete-user", {
+    fetch(`${BASE_URL}/user/delete-user`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,

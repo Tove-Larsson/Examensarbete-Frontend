@@ -3,6 +3,7 @@
 import Footer from "@/app/_components/Footer";
 import Navbar from "@/app/_components/Navbar";
 import { IRestaurant } from "@/app/_types/IRestaurant";
+import { BASE_URL } from "@/variable.env";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -75,7 +76,7 @@ export default function UpdateRestaurant() {
     }
 
     fetch(
-      `http://localhost:8080/restaurant/update/${encodeURIComponent(originalName)}`,
+      `${BASE_URL}/restaurant/update/${encodeURIComponent(originalName)}`,
       {
         method: "PUT",
         headers: {

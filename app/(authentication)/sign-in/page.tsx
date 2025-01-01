@@ -4,6 +4,7 @@ import Footer from "@/app/_components/Footer";
 import Navbar from "@/app/_components/Navbar";
 import { IAuthResponse } from "@/app/_types/IAuthResponse";
 import { IUser } from "@/app/_types/IUser";
+import { BASE_URL } from "@/variable.env";
 import { useRouter } from "next/navigation";
 import { ChangeEvent, FormEvent, useState } from "react";
 
@@ -37,7 +38,7 @@ export default function SignIn() {
       controller.abort();
     }, timeout);
 
-    fetch("http://localhost:8080/auth/login", {
+    fetch(`${BASE_URL}/auth/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(user),

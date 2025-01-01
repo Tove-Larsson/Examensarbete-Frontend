@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Footer from "../_components/Footer";
 import Navbar from "../_components/Navbar";
 import { IRestaurant } from "../_types/IRestaurant";
+import { BASE_URL } from "@/variable.env";
 
 export default function Restaurants() {
   const [restaurants, setRestaurants] = useState<IRestaurant[]>([]); 
@@ -12,7 +13,7 @@ export default function Restaurants() {
 
 
   useEffect(() => {
-    fetch("http://localhost:8080/restaurant/all", {
+    fetch(`${BASE_URL}/restaurant/all`, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     })

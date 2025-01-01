@@ -3,6 +3,7 @@
 import Footer from "@/app/_components/Footer";
 import Navbar from "@/app/_components/Navbar";
 import { IUser } from "@/app/_types/IUser";
+import { BASE_URL } from "@/variable.env";
 import { ChangeEvent, FormEvent, useState } from "react";
 
 export default function SignUp() {
@@ -28,7 +29,7 @@ export default function SignUp() {
     setError("");
     setSuccessMessage("");
 
-    fetch("http://localhost:8080/user/register", {
+    fetch(`${BASE_URL}/user/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(user),

@@ -2,6 +2,7 @@
 import Footer from "@/app/_components/Footer";
 import Navbar from "@/app/_components/Navbar";
 import { IRestaurant } from "@/app/_types/IRestaurant";
+import { BASE_URL } from "@/variable.env";
 import { useRouter } from "next/navigation";
 import { ChangeEvent, useEffect, useState } from "react";
 
@@ -46,7 +47,7 @@ export default function CreateRestaurant() {
       return;
     }
 
-    fetch("http://localhost:8080/restaurant/create", {
+    fetch(`${BASE_URL}/restaurant/create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
