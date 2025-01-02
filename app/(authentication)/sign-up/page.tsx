@@ -21,7 +21,7 @@ export default function SignUp() {
     event.preventDefault();
 
     if (!user.username || !user.password) {
-      setError("Both username and password are required.");
+      setError("Både användarnamn och lösenord krävs");
       return;
     }
 
@@ -38,14 +38,13 @@ export default function SignUp() {
         setLoading(false);
         if (response.ok) {
           setSuccessMessage("Kontot registrerat");
-          console.log("Sign up successful");
         } else {
-          setError("Invalid username or password.");
+          setError("Ogiltigt användarnamn eller lösenord");
         }
       })
       .catch(() => {
         setLoading(false);
-        setError("An error occurred. Please try again.");
+        setError("Ett fel uppstod, vänligen försök igen.");
       });
   }
 
